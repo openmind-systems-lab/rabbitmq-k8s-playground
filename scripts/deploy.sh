@@ -35,22 +35,23 @@ if ! kind get clusters | grep -qx "$CLUSTER"; then
 fi
 kubectl cluster-info >/dev/null
 
-# 2. Install the RabbitMQ Cluster Operator (creates the rabbitmq-system namespace)
-echo "☸️  Installing RabbitMQ Cluster Operator ..."
-kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/latest/download/cluster-operator.yml"
-kubectl -n rabbitmq-system rollout status deployment/rabbitmq-cluster-operator --timeout=180s
-
-# 3. Install cert-manager (required by the Messaging Topology Operator webhooks)
+# 2. Install cert-manager first: the RabbitMQ operator manifests create
+#    cert-manager Certificate/Issuer objects, so the CRDs must already exist.
 echo "☸️  Installing cert-manager ${CERT_MANAGER_VERSION} ..."
 kubectl apply -f "https://github.com/cert-manager/cert-manager/releases/download/${CERT_MANAGER_VERSION}/cert-manager.yaml"
-kubectl -n cert-manager rollout status deployment/cert-manager --timeout=180s
-kubectl -n cert-manager rollout status deployment/cert-manager-webhook --timeout=180s
-kubectl -n cert-manager rollout status deployment/cert-manager-cainjector --timeout=180s
+kubectl -n cert-manager rollout status deployment/cert-manager --timeout=300s
+kubectl -n cert-manager rollout status deployment/cert-manager-webhook --timeout=300s
+kubectl -n cert-manager rollout status deployment/cert-manager-cainjector --timeout=300s
+
+# 3. Install the RabbitMQ Cluster Operator (creates the rabbitmq-system namespace)
+echo "☸️  Installing RabbitMQ Cluster Operator ..."
+kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/latest/download/cluster-operator.yml"
+kubectl -n rabbitmq-system rollout status deployment/rabbitmq-cluster-operator --timeout=300s
 
 # 4. Install the Messaging Topology Operator (declarative exchanges/queues/bindings)
 echo "☸️  Installing RabbitMQ Messaging Topology Operator ..."
 kubectl apply -f "https://github.com/rabbitmq/messaging-topology-operator/releases/latest/download/messaging-topology-operator-with-certmanager.yaml"
-kubectl -n rabbitmq-system rollout status deployment/messaging-topology-operator --timeout=180s
+kubectl -n rabbitmq-system rollout status deployment/messaging-topology-operator --timeout=300s
 
 # 5. Build images and load them into kind
 "$ROOT/scripts/build.sh"
