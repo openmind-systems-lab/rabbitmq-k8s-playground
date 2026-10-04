@@ -4,11 +4,15 @@ set -euo pipefail
 # Show the RabbitMQ default user credentials and port-forward the management UI + AMQP.
 NAMESPACE="${NAMESPACE:-rabbitmq-playground}"
 
-decode() { base64 --decode 2>/dev/null || base64 -D; }
+# The Cluster Operator generates a random default user at deployment time.
+credential() {
+  kubectl -n "$NAMESPACE" get secret rabbitmq-default-user \
+    -o go-template="{{index .data \"$1\" | base64decode}}"
+}
 
 echo "🔐 Default credentials:"
-echo "   username: $(kubectl -n "$NAMESPACE" get secret rabbitmq-default-user -o jsonpath='{.data.username}' | decode)"
-echo "   password: $(kubectl -n "$NAMESPACE" get secret rabbitmq-default-user -o jsonpath='{.data.password}' | decode)"
+echo "   username: $(credential username)"
+echo "   password: $(credential password)"
 echo ""
 echo "🌐 Management UI : http://localhost:15672"
 echo "🔌 AMQP          : localhost:5672"
