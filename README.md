@@ -279,6 +279,85 @@ Run them all at once:
 make test
 ```
 
+Expected output:
+
+```text
+🧪 oms-lab rabbitmq-k8s-playground % make test
+./scripts/test-work-queue.sh
+📊 processed_orders before: 380
+📨 Publishing 20 orders ...
+{"published":20,"requested":20}
+
+📊 processed_orders after: 403 (delta=23, expected >= 20)
+⏳ orders.work depth: 0
+✅ Competing consumers processed every work message at least once.
+./scripts/test-fanout.sh
+📨 Publishing 20 orders ...
+{"published":20,"requested":20}
+
+🔔 audit=453 notifications=453
+✅ Both fanout consumers received the same number of broadcast messages.
+./scripts/test-dead-letter.sh
+📊 orders.dlq before: 26
+☠️ Publishing 5 poison messages ...
+{"published":5,"requested":5}
+
+📊 orders.dlq after: 31 (delta=5, expected >= 5)
+✅ Poison messages were rejected and dead-lettered to orders.dlq.
+```
+
+> The counters depend on how long the playground has been running: besides the
+> on-demand batches published by the tests, the publisher emits a background order
+> every 2 seconds and a poison order every 15 messages. This is why the work-queue
+> delta is greater than the number of messages requested.
+
+---
+
+# 📸 Management UI
+
+The same behaviour is directly observable in the RabbitMQ management UI:
+
+```bash
+make ports
+# then browse http://localhost:15672
+```
+
+### Exchanges
+
+<p align="center">
+  <img src="media/list-exchanges.png" width="760" alt="RabbitMQ management UI - Exchanges tab listing orders.topic, orders.fanout and orders.dlx">
+</p>
+
+The three exchanges declared by the Messaging Topology Operator appear next to the built-in AMQP ones. `orders.fanout` shows a higher **message rate out** than `orders.topic`: it is bound to two queues, so every order is broadcast to both consumers.
+
+### Queues
+
+<p align="center">
+  <img src="media/list-queues.png" width="900" alt="RabbitMQ management UI - Queues tab listing four quorum queues">
+</p>
+
+All four queues are `quorum` type and `running`. Only `orders.work` carries the `DLX` and `DLK` features (dead-letter exchange and routing key), while the rejected poison messages accumulate in `orders.dlq`.
+
+### Work queue — competing consumers
+
+<p align="center">
+  <img src="media/queue-orders.work.png" width="900" alt="RabbitMQ management UI - orders.work queue detail showing two consumers and the dead-letter arguments">
+</p>
+
+`orders.work` reports **2 consumers** — the two worker replicas competing for every message. `Deliver (manual ack)` matches `Publish` while `Get (auto ack)` stays at `0.00/s`, and the queue details expose the dead-letter configuration: `x-dead-letter-exchange: orders.dlx`, `x-dead-letter-routing-key: orders.dead` and `x-queue-type: quorum`.
+
+### Fanout queues — broadcast
+
+<p align="center">
+  <img src="media/queue-orders.audit.png" width="900" alt="RabbitMQ management UI - orders.audit queue detail showing one consumer">
+</p>
+
+<p align="center">
+  <img src="media/queue-orders.notifications.png" width="900" alt="RabbitMQ management UI - orders.notifications queue detail showing one consumer">
+</p>
+
+Each fanout queue has its own **single consumer**, and both drain continuously with identical publish and delivery rates — confirming that a fanout exchange delivers every order to every bound queue.
+
 ---
 
 ## 🎬 Demo
