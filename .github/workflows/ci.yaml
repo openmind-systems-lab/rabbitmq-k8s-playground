@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.x'
+          cache: false
+      - name: Go format check
+        run: test -z "$(gofmt -l services)"
+      - name: Go vet and build
+        run: |
+          for s in publisher worker consumer; do
+            echo "== $s =="
+            (cd "services/$s" && go vet ./... && go build ./...)
+          done
+      - name: Shell script syntax
+        run: bash -n scripts/*.sh
+      - name: Validate Kubernetes manifests
+        run: kubectl kustomize k8s > /dev/null
+      - name: Build container images
+        run: |
+          for s in publisher worker consumer; do
+            docker build -t "rabbitmq-k8s-playground/$s:ci" "services/$s"
+          done

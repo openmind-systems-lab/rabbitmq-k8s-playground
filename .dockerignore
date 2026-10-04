@@ -1,0 +1,8 @@
+.DS_Store
+**/.DS_Store
+.git
+.gitignore
+media
+scripts
+k8s
+*.log

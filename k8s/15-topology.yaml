@@ -1,0 +1,163 @@
+# Declarative AMQP topology managed by the RabbitMQ Messaging Topology Operator.
+# Each object references the "rabbitmq" cluster in the same namespace.
+#
+# Exchanges
+#   orders.topic   (topic)   routing keys: orders.created / orders.shipped / orders.cancelled
+#   orders.fanout  (fanout)  broadcast to every bound queue
+#   orders.dlx     (direct)  dead-letter exchange
+#
+# Queues
+#   orders.work           quorum  competing consumers, dead-lettered to orders.dlx
+#   orders.dlq            quorum  dead-letter queue for poison messages
+#   orders.audit          quorum  fanout consumer "audit"
+#   orders.notifications  quorum  fanout consumer "notifications"
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: orders-topic
+  namespace: rabbitmq-playground
+spec:
+  name: orders.topic
+  type: topic
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: orders-fanout
+  namespace: rabbitmq-playground
+spec:
+  name: orders.fanout
+  type: fanout
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: orders-dlx
+  namespace: rabbitmq-playground
+spec:
+  name: orders.dlx
+  type: direct
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: orders-work
+  namespace: rabbitmq-playground
+spec:
+  name: orders.work
+  type: quorum
+  durable: true
+  autoDelete: false
+  arguments:
+    x-dead-letter-exchange: orders.dlx
+    x-dead-letter-routing-key: orders.dead
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: orders-dlq
+  namespace: rabbitmq-playground
+spec:
+  name: orders.dlq
+  type: quorum
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: orders-audit
+  namespace: rabbitmq-playground
+spec:
+  name: orders.audit
+  type: quorum
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: orders-notifications
+  namespace: rabbitmq-playground
+spec:
+  name: orders.notifications
+  type: quorum
+  durable: true
+  autoDelete: false
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+# orders.topic --orders.#--> orders.work  (work queue / competing consumers)
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: work-topic
+  namespace: rabbitmq-playground
+spec:
+  source: orders.topic
+  destination: orders.work
+  destinationType: queue
+  routingKey: "orders.#"
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+# orders.dlx --orders.dead--> orders.dlq  (dead-letter routing)
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: dlq-dlx
+  namespace: rabbitmq-playground
+spec:
+  source: orders.dlx
+  destination: orders.dlq
+  destinationType: queue
+  routingKey: "orders.dead"
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+# orders.fanout --> orders.audit  (fanout ignores the routing key)
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: audit-fanout
+  namespace: rabbitmq-playground
+spec:
+  source: orders.fanout
+  destination: orders.audit
+  destinationType: queue
+  routingKey: ""
+  rabbitmqClusterReference:
+    name: rabbitmq
+---
+# orders.fanout --> orders.notifications
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: notifications-fanout
+  namespace: rabbitmq-playground
+spec:
+  source: orders.fanout
+  destination: orders.notifications
+  destinationType: queue
+  routingKey: ""
+  rabbitmqClusterReference:
+    name: rabbitmq

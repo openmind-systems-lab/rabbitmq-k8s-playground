@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Finder
+Icon?
+._*
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Vim
+*.swp
+
+# Logs
+*.log
+
+# Local runtime data
+.venv/
+tmp/
+
+# Go build artifacts
+services/publisher/publisher
+services/worker/worker
+services/consumer/consumer

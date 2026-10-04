@@ -1,0 +1,24 @@
+# RabbitMQ cluster provisioned by the Cluster Operator in the playground namespace.
+# The operator creates:
+#   - Service "rabbitmq" (amqp 5672, management 15672, prometheus 15692)
+#   - Secret "rabbitmq-default-user" (keys username / password)
+#   - StatefulSet "rabbitmq-server" (pod rabbitmq-server-0)
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq
+  namespace: rabbitmq-playground
+  labels:
+    app.kubernetes.io/part-of: rabbitmq-k8s-playground
+spec:
+  replicas: 1
+  persistence:
+    storageClassName: standard
+    storage: 2Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi

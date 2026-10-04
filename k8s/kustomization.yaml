@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-namespace.yaml
+  - 10-rabbitmq.yaml
+  - 15-topology.yaml
+  - 20-postgres.yaml
+  - 30-publisher.yaml
+  - 40-worker.yaml
+  - 50-consumers.yaml
