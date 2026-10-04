@@ -15,58 +15,74 @@
   <text x="800" y="60" text-anchor="middle" font-size="42" font-weight="700" fill="#0f172a">RabbitMQ on Kubernetes</text>
   <text x="800" y="94" text-anchor="middle" font-size="20" fill="#64748b">rabbitmq-k8s-playground</text>
 
-  <rect x="40" y="120" width="430" height="800" rx="18" fill="#ffffff" stroke="#326CE5" stroke-width="1.6"/>
-  <text x="64" y="152" font-size="17" font-weight="700" fill="#326CE5">Go Applications</text>
-  <text x="64" y="172" font-size="12.5" fill="#64748b">namespace rabbitmq-playground</text>
+  <rect x="40" y="120" width="430" height="800" rx="18" fill="#f8fbff" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <!-- Go technology logo -->
+  <g transform="translate(62 134)">
+    <text x="0" y="20" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900" font-style="italic" fill="#00ADD8">Go</text>
+  </g>
+  <text x="118" y="152" font-size="17" font-weight="700" fill="#326CE5">Go Applications</text>
+  <text x="118" y="172" font-size="12.5" fill="#64748b">namespace rabbitmq-playground</text>
 
-  <rect x="510" y="120" width="620" height="800" rx="18" fill="#ffffff" stroke="#FF6600" stroke-width="1.6"/>
-  <text x="534" y="152" font-size="17" font-weight="700" fill="#FF6600">RabbitMQ</text>
-  <text x="534" y="172" font-size="12.5" fill="#64748b">Cluster Operator + Messaging Topology Operator</text>
+  <rect x="510" y="120" width="620" height="800" rx="18" fill="#fffaf5" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <!-- RabbitMQ technology logo -->
+  <g transform="translate(532 132)">
+    <rect x="0" y="0" width="38" height="38" rx="9" fill="#ff6600"/>
+    <path d="M9 26 V12 H15 V17 H23 V12 H29 V26 H24 V21 H14 V26 Z" fill="#ffffff"/>
+    <circle cx="12" cy="10" r="3" fill="#ffffff"/>
+    <circle cx="27" cy="10" r="3" fill="#ffffff"/>
+  </g>
+  <text x="582" y="152" font-size="17" font-weight="700" fill="#FF6600">RabbitMQ</text>
+  <text x="582" y="172" font-size="12.5" fill="#64748b">Cluster Operator + Messaging Topology Operator</text>
 
-  <rect x="1150" y="120" width="410" height="800" rx="18" fill="#ffffff" stroke="#4169E1" stroke-width="1.6"/>
-  <text x="1174" y="152" font-size="17" font-weight="700" fill="#4169E1">PostgreSQL</text>
-  <text x="1174" y="172" font-size="12.5" fill="#64748b">durable projections</text>
+  <rect x="1150" y="120" width="410" height="800" rx="18" fill="#faf9ff" stroke="#818cf8" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <!-- PostgreSQL technology logo -->
+  <g transform="translate(1172 132)">
+    <rect x="0" y="0" width="38" height="38" rx="9" fill="#336791"/>
+    <path d="M10 10 C15 7 25 8 29 12 C31 15 30 21 28 25 C26 29 21 30 18 27 C15 25 15 20 15 16 C15 13 13 12 10 10 Z" fill="none" stroke="#ffffff" stroke-width="2.3"/>
+    <path d="M25 25 C29 25 32 28 32 31" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round"/>
+    <path d="M14 14 C18 17 22 17 27 15" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+  </g>
+  <text x="1222" y="152" font-size="17" font-weight="700" fill="#4169E1">PostgreSQL</text>
+  <text x="1222" y="172" font-size="12.5" fill="#64748b">durable projections</text>
 
-  <g filter="url(#soft)"><rect x="64" y="200" width="382" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
-  <rect x="78" y="221" width="44" height="44" rx="10" fill="#326CE5"/>
-  <path d="M91,243 L112,250 L91,257 L95,250 Z" fill="#ffffff"/>
+  <g filter="url(#soft)"><rect x="64" y="200" width="382" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
+  <rect x="78" y="221" width="44" height="44" rx="10" fill="#00ADD8"/>
+  <text x="100" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" font-style="italic" fill="#ffffff">Go</text>
   <text x="136" y="238" font-size="16" font-weight="700" fill="#0f172a">Publisher</text>
   <text x="136" y="260" font-size="12.5" fill="#475569">Go · amqp091-go · publisher confirms</text>
 
-  <g filter="url(#soft)"><rect x="64" y="300" width="382" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
-  <rect x="78" y="321" width="44" height="44" rx="10" fill="#326CE5"/>
-  <circle cx="100" cy="343" r="7" fill="none" stroke="#ffffff" stroke-width="2.4"/>
-  <circle cx="100" cy="343" r="2.4" fill="#ffffff"/>
-  <path d="M100,332 V336 M100,350 V354 M89,343 H93 M107,343 H111" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+  <g filter="url(#soft)"><rect x="64" y="300" width="382" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
+  <rect x="78" y="321" width="44" height="44" rx="10" fill="#00ADD8"/>
+  <text x="100" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" font-style="italic" fill="#ffffff">Go</text>
   <text x="136" y="338" font-size="16" font-weight="700" fill="#0f172a">Worker (2 replicas)</text>
   <text x="136" y="360" font-size="12.5" fill="#475569">competing consumers · manual ack</text>
 
-  <g filter="url(#soft)"><rect x="64" y="470" width="382" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="64" y="470" width="382" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="78" y="491" width="44" height="44" rx="10" fill="#326CE5"/>
   <path d="M94,522 L99,516 L105,522 L105,528 L94,528 Z M99,516 V513 M105,528 Q100,533 94,528" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
   <text x="136" y="508" font-size="16" font-weight="700" fill="#0f172a">consumer-audit</text>
   <text x="136" y="530" font-size="12.5" fill="#475569">fanout consumer · audit trail</text>
 
-  <g filter="url(#soft)"><rect x="64" y="600" width="382" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="64" y="600" width="382" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="78" y="621" width="44" height="44" rx="10" fill="#326CE5"/>
   <path d="M94,652 L99,646 L105,652 L105,658 L94,658 Z M99,646 V643 M105,658 Q100,663 94,658" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
   <text x="136" y="638" font-size="16" font-weight="700" fill="#0f172a">consumer-notifications</text>
   <text x="136" y="660" font-size="12.5" fill="#475569">fanout consumer · notifications</text>
 
   <!-- Zone B: exchanges and queues -->
-  <g filter="url(#soft)"><rect x="630" y="200" width="300" height="76" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="200" width="300" height="76" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="216" width="44" height="44" rx="10" fill="#FF6600"/>
   <path d="M662,238 H670 M670,238 L678,231 M670,238 L678,245" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
   <text x="702" y="234" font-size="16" font-weight="700" fill="#0f172a">orders.topic</text>
   <text x="702" y="256" font-size="12" fill="#475569">topic exchange</text>
 
-  <g filter="url(#soft)"><rect x="630" y="320" width="300" height="76" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="320" width="300" height="76" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="336" width="44" height="44" rx="10" fill="#FF6600"/>
   <path d="M662,358 H670 M670,358 L678,351 M670,358 L678,365" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
   <text x="702" y="354" font-size="16" font-weight="700" fill="#0f172a">orders.fanout</text>
   <text x="702" y="376" font-size="12" fill="#475569">fanout exchange</text>
 
-  <g filter="url(#soft)"><rect x="630" y="450" width="300" height="76" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="450" width="300" height="76" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="466" width="44" height="44" rx="10" fill="#FF6600"/>
   <rect x="656" y="476" width="20" height="4.5" rx="2" fill="#ffffff"/>
   <rect x="656" y="485" width="20" height="4.5" rx="2" fill="#ffffff"/>
@@ -74,7 +90,7 @@
   <text x="702" y="484" font-size="16" font-weight="700" fill="#0f172a">orders.work</text>
   <text x="702" y="506" font-size="12" fill="#475569">quorum queue · DLX bound</text>
 
-  <g filter="url(#soft)"><rect x="630" y="560" width="220" height="70" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="560" width="220" height="70" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="574" width="42" height="42" rx="10" fill="#FF6600"/>
   <rect x="656" y="583" width="18" height="4.5" rx="2" fill="#ffffff"/>
   <rect x="656" y="592" width="18" height="4.5" rx="2" fill="#ffffff"/>
@@ -82,7 +98,7 @@
   <text x="698" y="590" font-size="14.5" font-weight="700" fill="#0f172a">orders.audit</text>
   <text x="698" y="610" font-size="11.5" fill="#475569">quorum queue</text>
 
-  <g filter="url(#soft)"><rect x="630" y="650" width="220" height="70" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="650" width="220" height="70" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="664" width="42" height="42" rx="10" fill="#FF6600"/>
   <rect x="656" y="673" width="18" height="4.5" rx="2" fill="#ffffff"/>
   <rect x="656" y="682" width="18" height="4.5" rx="2" fill="#ffffff"/>
@@ -90,13 +106,13 @@
   <text x="698" y="680" font-size="14.5" font-weight="700" fill="#0f172a">orders.notif.</text>
   <text x="698" y="700" font-size="11.5" fill="#475569">quorum queue</text>
 
-  <g filter="url(#soft)"><rect x="630" y="790" width="150" height="76" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="630" y="790" width="150" height="76" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="644" y="806" width="42" height="42" rx="10" fill="#dc2626"/>
   <path d="M662,817 V831 M662,837 V840" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
   <text x="694" y="822" font-size="14.5" font-weight="700" fill="#0f172a">orders.dlx</text>
   <text x="694" y="842" font-size="11.5" fill="#475569">direct exchange</text>
 
-  <g filter="url(#soft)"><rect x="960" y="790" width="150" height="76" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
+  <g filter="url(#soft)"><rect x="960" y="790" width="150" height="76" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
   <rect x="974" y="806" width="42" height="42" rx="10" fill="#dc2626"/>
   <rect x="986" y="816" width="18" height="4.5" rx="2" fill="#ffffff"/>
   <rect x="986" y="825" width="18" height="4.5" rx="2" fill="#ffffff"/>
@@ -105,41 +121,38 @@
   <text x="1024" y="842" font-size="11.5" fill="#475569">quorum queue</text>
 
   <!-- Zone C: PostgreSQL tables -->
-  <g filter="url(#soft)"><rect x="1190" y="560" width="360" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
-  <rect x="1204" y="581" width="44" height="44" rx="10" fill="#4169E1"/>
-  <ellipse cx="1226" cy="592" rx="11" ry="4" fill="#ffffff"/>
-  <path d="M1215,592 V614 M1237,592 V614" stroke="#ffffff" stroke-width="2.4"/>
-  <path d="M1215,614 Q1226,619 1237,614" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <g filter="url(#soft)"><rect x="1190" y="560" width="360" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
+  <rect x="1204" y="581" width="44" height="44" rx="10" fill="#336791"/>
+  <text x="1226" y="609" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#ffffff">PG</text>
   <text x="1262" y="598" font-size="16" font-weight="700" fill="#0f172a">processed_orders</text>
   <text x="1262" y="620" font-size="12.5" fill="#475569">PostgreSQL table</text>
 
-  <g filter="url(#soft)"><rect x="1190" y="690" width="360" height="86" rx="12" fill="#ffffff" stroke="#e2e8f0"/></g>
-  <rect x="1204" y="711" width="44" height="44" rx="10" fill="#4169E1"/>
-  <ellipse cx="1226" cy="722" rx="11" ry="4" fill="#ffffff"/>
-  <path d="M1215,722 V744 M1237,722 V744" stroke="#ffffff" stroke-width="2.4"/>
-  <path d="M1215,744 Q1226,749 1237,744" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <g filter="url(#soft)"><rect x="1190" y="690" width="360" height="86" rx="12" fill="#ffffff" stroke="#dbe5ef"/></g>
+  <rect x="1204" y="711" width="44" height="44" rx="10" fill="#336791"/>
+  <text x="1226" y="739" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#ffffff">PG</text>
   <text x="1262" y="728" font-size="16" font-weight="700" fill="#0f172a">fanout_events</text>
   <text x="1262" y="750" font-size="12.5" fill="#475569">PostgreSQL table</text>
 
   <!-- Connectors -->
-  <path d="M446,243 H600" fill="none" stroke="#2563eb" stroke-width="2.4"/>
-  <path d="M600,243 V238 H630" fill="none" stroke="#2563eb" stroke-width="2.4" marker-end="url(#blue)"/>
-  <path d="M600,243 V358 H630" fill="none" stroke="#2563eb" stroke-width="2.4" marker-end="url(#blue)"/>
+  <path d="M446,243 H600" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square"/>
+  <path d="M600,243 V238 H630" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#blue)"/>
+  <path d="M600,243 V358 H630" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#blue)"/>
 
-  <path d="M930,238 H990 V488 H930" fill="none" stroke="#16a34a" stroke-width="2.4" marker-end="url(#green)"/>
-  <path d="M930,358 H1030 V685" fill="none" stroke="#16a34a" stroke-width="2.4"/>
-  <path d="M1030,595 H930" fill="none" stroke="#16a34a" stroke-width="2.4" marker-end="url(#green)"/>
-  <path d="M1030,685 H930" fill="none" stroke="#16a34a" stroke-width="2.4" marker-end="url(#green)"/>
+  <path d="M930,238 H990 V488 H930" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#green)"/>
+  <path d="M930,358 H1030 V685" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square"/>
+  <path d="M1030,595 H930" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#green)"/>
+  <path d="M1030,685 H930" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#green)"/>
 
-  <path d="M630,488 H560 V360 H446" fill="none" stroke="#ea580c" stroke-width="2.4" marker-end="url(#orange)"/>
-  <path d="M630,595 H585 V513 H446" fill="none" stroke="#ea580c" stroke-width="2.4" marker-end="url(#orange)"/>
-  <path d="M630,685 H575 V643 H446" fill="none" stroke="#ea580c" stroke-width="2.4" marker-end="url(#orange)"/>
+  <path d="M630,488 H560 V360 H446" fill="none" stroke="#ea580c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#orange)"/>
+  <path d="M630,595 H585 V513 H446" fill="none" stroke="#ea580c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#orange)"/>
+  <path d="M630,685 H575 V643 H446" fill="none" stroke="#ea580c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#orange)"/>
 
-  <path d="M890,526 V828 H780" fill="none" stroke="#dc2626" stroke-width="2.4" marker-end="url(#red)"/>
-  <path d="M780,828 H960" fill="none" stroke="#dc2626" stroke-width="2.4" marker-end="url(#red)"/>
+  <path d="M890,526 V828 H780" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#red)"/>
+  <path d="M780,828 H960" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#red)"/>
 
-  <path d="M64,343 H8 V960 H1180 V603 H1190" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#slate)"/>
-  <path d="M64,643 H24 V880 H1170 V733 H1190" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#slate)"/>
+  <!-- PostgreSQL writes: continuous orthogonal routes, drawn above all zones -->
+  <path d="M64,343 H8 V960 H1180 V603 H1190" fill="none" stroke="#475569" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#slate)"/>
+  <path d="M64,643 H24 V880 H1170 V733 H1190" fill="none" stroke="#475569" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#slate)"/>
 
   <!-- Flow labels -->
   <text x="523" y="232" text-anchor="middle" font-size="11.5" fill="#2563eb">publish</text>
@@ -155,13 +168,13 @@
 
   <!-- Legend -->
   <text x="90" y="712" font-size="13" font-weight="700" fill="#475569">Legend</text>
-  <path d="M90,740 H126" fill="none" stroke="#2563eb" stroke-width="2.4" marker-end="url(#blue)"/>
+  <path d="M90,740 H126" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#blue)"/>
   <text x="136" y="744" font-size="12" fill="#334155">publish (AMQP)</text>
-  <path d="M90,764 H126" fill="none" stroke="#16a34a" stroke-width="2.4" marker-end="url(#green)"/>
+  <path d="M90,764 H126" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#green)"/>
   <text x="136" y="768" font-size="12" fill="#334155">routing / binding</text>
-  <path d="M90,788 H126" fill="none" stroke="#ea580c" stroke-width="2.4" marker-end="url(#orange)"/>
+  <path d="M90,788 H126" fill="none" stroke="#ea580c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#orange)"/>
   <text x="136" y="792" font-size="12" fill="#334155">consume</text>
-  <path d="M90,812 H126" fill="none" stroke="#dc2626" stroke-width="2.4" marker-end="url(#red)"/>
+  <path d="M90,812 H126" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="square" marker-end="url(#red)"/>
   <text x="136" y="816" font-size="12" fill="#334155">dead-letter (nack)</text>
   <path d="M90,836 H126" fill="none" stroke="#475569" stroke-width="2.4" marker-end="url(#slate)"/>
   <text x="136" y="840" font-size="12" fill="#334155">write to PostgreSQL</text>

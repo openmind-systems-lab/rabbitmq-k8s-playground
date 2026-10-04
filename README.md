@@ -46,7 +46,7 @@ The playground demonstrates the key RabbitMQ concepts:
 # 🏗️ Architecture
 
 <p align="center">
-  <img src="media/architecture.png" width="900" alt="rabbitmq-k8s-playground architecture diagram">
+  <img src="media/architecture.svg" width="900" alt="rabbitmq-k8s-playground architecture diagram">
 </p>
 
 ---
