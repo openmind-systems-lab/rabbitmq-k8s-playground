@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-
-<svg xmlns="http://www.w3.org/2000/svg"
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
->>>>>>> 95ca590 (Added svg/png)
      width="1600"
      height="1100"
      viewBox="0 0 1600 1100"
@@ -13,26 +8,20 @@
 
   <defs>
 
-<<<<<<< HEAD
-=======
     <!-- ========================================================= -->
     <!-- FILTER                                                     -->
     <!-- ========================================================= -->
 
->>>>>>> 95ca590 (Added svg/png)
     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="1.5" stdDeviation="2.2"
                     flood-color="#0f172a" flood-opacity="0.12"/>
     </filter>
 
-<<<<<<< HEAD
-=======
 
     <!-- ========================================================= -->
     <!-- ARROW MARKERS                                               -->
     <!-- ========================================================= -->
 
->>>>>>> 95ca590 (Added svg/png)
     <marker id="blue" markerWidth="9" markerHeight="9"
             refX="7.5" refY="3" orient="auto">
       <path d="M0,0 L8,3 L0,6 z" fill="#2563eb"/>
@@ -58,43 +47,6 @@
       <path d="M0,0 L8,3 L0,6 z" fill="#475569"/>
     </marker>
 
-<<<<<<< HEAD
-  </defs>
-
-  <!-- Background -->
-  <rect x="0" y="0" width="1600" height="1100" fill="#ffffff"/>
-
-  <!-- Title -->
-  <text x="800" y="60"
-        text-anchor="middle"
-        font-size="42"
-        font-weight="700"
-        fill="#0f172a">
-    RabbitMQ on Kubernetes
-  </text>
-
-  <text x="800" y="94"
-        text-anchor="middle"
-        font-size="20"
-        fill="#64748b">
-    rabbitmq-k8s-playground
-  </text>
-
-
-  <!-- ========================================================= -->
-  <!-- GO ZONE                                                   -->
-  <!-- ========================================================= -->
-
-  <rect x="40" y="120"
-        width="430" height="800"
-        rx="18"
-        fill="#f8fbff"
-        stroke="#60a5fa"
-        stroke-width="1.8"
-        stroke-dasharray="7 5"/>
-
-  <!-- Go technology logo -->
-=======
 
     <!-- ========================================================= -->
     <!-- EMBEDDED RABBITMQ LOGO                                    -->
@@ -221,7 +173,6 @@
         stroke-width="1.8"
         stroke-dasharray="7 5"/>
 
->>>>>>> 95ca590 (Added svg/png)
   <g transform="translate(62 134)">
     <text x="0" y="20"
           font-family="Arial, Helvetica, sans-serif"
@@ -248,11 +199,7 @@
 
 
   <!-- ========================================================= -->
-<<<<<<< HEAD
-  <!-- RABBITMQ ZONE                                             -->
-=======
   <!-- RABBITMQ ZONE                                               -->
->>>>>>> 95ca590 (Added svg/png)
   <!-- ========================================================= -->
 
   <rect x="510" y="120"
@@ -263,22 +210,11 @@
         stroke-width="1.8"
         stroke-dasharray="7 5"/>
 
-<<<<<<< HEAD
-  <!-- RabbitMQ official logo -->
-  <image
-    x="532"
-    y="132"
-    width="38"
-    height="38"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-=======
   <use xlink:href="#rabbitmq-logo"
        x="532"
        y="132"
        width="38"
        height="38"/>
->>>>>>> 95ca590 (Added svg/png)
 
   <text x="582" y="152"
         font-size="17"
@@ -295,11 +231,7 @@
 
 
   <!-- ========================================================= -->
-<<<<<<< HEAD
-  <!-- POSTGRESQL ZONE                                           -->
-=======
   <!-- POSTGRESQL ZONE                                             -->
->>>>>>> 95ca590 (Added svg/png)
   <!-- ========================================================= -->
 
   <rect x="1150" y="120"
@@ -310,22 +242,11 @@
         stroke-width="1.8"
         stroke-dasharray="7 5"/>
 
-<<<<<<< HEAD
-  <!-- PostgreSQL official logo -->
-  <image
-    x="1172"
-    y="132"
-    width="38"
-    height="38"
-    href="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-=======
   <use xlink:href="#postgresql-logo"
        x="1172"
        y="132"
        width="38"
        height="38"/>
->>>>>>> 95ca590 (Added svg/png)
 
   <text x="1222" y="152"
         font-size="17"
@@ -342,11 +263,7 @@
 
 
   <!-- ========================================================= -->
-<<<<<<< HEAD
-  <!-- GO APPLICATIONS                                           -->
-=======
   <!-- GO APPLICATIONS                                             -->
->>>>>>> 95ca590 (Added svg/png)
   <!-- ========================================================= -->
 
   <!-- Publisher -->
@@ -502,11 +419,7 @@
 
 
   <!-- ========================================================= -->
-<<<<<<< HEAD
-  <!-- RABBITMQ EXCHANGES / QUEUES                               -->
-=======
   <!-- RABBITMQ EXCHANGES / QUEUES                                -->
->>>>>>> 95ca590 (Added svg/png)
   <!-- ========================================================= -->
 
   <!-- orders.topic -->
@@ -518,551 +431,6 @@
           stroke="#dbe5ef"/>
   </g>
 
-<<<<<<< HEAD
-  <!-- Official RabbitMQ logo -->
-  <image
-    x="644"
-    y="216"
-    width="44"
-    height="44"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="702" y="234"
-        font-size="16"
-        font-weight="700"
-        fill="#0f172a">
-    orders.topic
-  </text>
-
-  <text x="702" y="256"
-        font-size="12"
-        fill="#475569">
-    topic exchange
-  </text>
-
-
-  <!-- orders.fanout -->
-  <g filter="url(#soft)">
-    <rect x="630" y="320"
-          width="300" height="76"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="644"
-    y="336"
-    width="44"
-    height="44"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="702" y="354"
-        font-size="16"
-        font-weight="700"
-        fill="#0f172a">
-    orders.fanout
-  </text>
-
-  <text x="702" y="376"
-        font-size="12"
-        fill="#475569">
-    fanout exchange
-  </text>
-
-
-  <!-- orders.work -->
-  <g filter="url(#soft)">
-    <rect x="630" y="450"
-          width="300" height="76"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="644"
-    y="466"
-    width="44"
-    height="44"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="702" y="484"
-        font-size="16"
-        font-weight="700"
-        fill="#0f172a">
-    orders.work
-  </text>
-
-  <text x="702" y="506"
-        font-size="12"
-        fill="#475569">
-    quorum queue · DLX bound
-  </text>
-
-
-  <!-- orders.audit -->
-  <g filter="url(#soft)">
-    <rect x="630" y="560"
-          width="220" height="70"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="644"
-    y="574"
-    width="42"
-    height="42"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="698" y="590"
-        font-size="14.5"
-        font-weight="700"
-        fill="#0f172a">
-    orders.audit
-  </text>
-
-  <text x="698" y="610"
-        font-size="11.5"
-        fill="#475569">
-    quorum queue
-  </text>
-
-
-  <!-- orders.notif -->
-  <g filter="url(#soft)">
-    <rect x="630" y="650"
-          width="220" height="70"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="644"
-    y="664"
-    width="42"
-    height="42"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="698" y="680"
-        font-size="14.5"
-        font-weight="700"
-        fill="#0f172a">
-    orders.notif.
-  </text>
-
-  <text x="698" y="700"
-        font-size="11.5"
-        fill="#475569">
-    quorum queue
-  </text>
-
-
-  <!-- orders.dlx -->
-  <g filter="url(#soft)">
-    <rect x="630" y="790"
-          width="150" height="76"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="644"
-    y="806"
-    width="42"
-    height="42"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="694" y="822"
-        font-size="14.5"
-        font-weight="700"
-        fill="#0f172a">
-    orders.dlx
-  </text>
-
-  <text x="694" y="842"
-        font-size="11.5"
-        fill="#475569">
-    direct exchange
-  </text>
-
-
-  <!-- orders.dlq -->
-  <g filter="url(#soft)">
-    <rect x="960" y="790"
-          width="150" height="76"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="974"
-    y="806"
-    width="42"
-    height="42"
-    href="https://www.rabbitmq.com/img/rabbitmq-logo.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="1024" y="822"
-        font-size="14.5"
-        font-weight="700"
-        fill="#0f172a">
-    orders.dlq
-  </text>
-
-  <text x="1024" y="842"
-        font-size="11.5"
-        fill="#475569">
-    quorum queue
-  </text>
-
-
-  <!-- ========================================================= -->
-  <!-- POSTGRESQL TABLES                                         -->
-  <!-- ========================================================= -->
-
-  <!-- processed_orders -->
-  <g filter="url(#soft)">
-    <rect x="1190" y="560"
-          width="360" height="86"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <!-- Official PostgreSQL logo -->
-  <image
-    x="1204"
-    y="581"
-    width="44"
-    height="44"
-    href="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="1262" y="598"
-        font-size="16"
-        font-weight="700"
-        fill="#0f172a">
-    processed_orders
-  </text>
-
-  <text x="1262" y="620"
-        font-size="12.5"
-        fill="#475569">
-    PostgreSQL table
-  </text>
-
-
-  <!-- fanout_events -->
-  <g filter="url(#soft)">
-    <rect x="1190" y="690"
-          width="360" height="86"
-          rx="12"
-          fill="#ffffff"
-          stroke="#dbe5ef"/>
-  </g>
-
-  <image
-    x="1204"
-    y="711"
-    width="44"
-    height="44"
-    href="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg"
-    preserveAspectRatio="xMidYMid meet"/>
-
-  <text x="1262" y="728"
-        font-size="16"
-        font-weight="700"
-        fill="#0f172a">
-    fanout_events
-  </text>
-
-  <text x="1262" y="750"
-        font-size="12.5"
-        fill="#475569">
-    PostgreSQL table
-  </text>
-
-
-  <!-- ========================================================= -->
-  <!-- CONNECTORS                                                -->
-  <!-- ========================================================= -->
-
-  <path d="M446,243 H600"
-        fill="none"
-        stroke="#2563eb"
-        stroke-width="2.6"/>
-
-  <path d="M600,243 V238 H630"
-        fill="none"
-        stroke="#2563eb"
-        stroke-width="2.6"
-        marker-end="url(#blue)"/>
-
-  <path d="M600,243 V358 H630"
-        fill="none"
-        stroke="#2563eb"
-        stroke-width="2.6"
-        marker-end="url(#blue)"/>
-
-
-  <path d="M930,238 H990 V488 H930"
-        fill="none"
-        stroke="#16a34a"
-        stroke-width="2.6"
-        marker-end="url(#green)"/>
-
-  <path d="M930,358 H1030 V685"
-        fill="none"
-        stroke="#16a34a"
-        stroke-width="2.6"/>
-
-  <path d="M1030,595 H930"
-        fill="none"
-        stroke="#16a34a"
-        stroke-width="2.6"
-        marker-end="url(#green)"/>
-
-  <path d="M1030,685 H930"
-        fill="none"
-        stroke="#16a34a"
-        stroke-width="2.6"
-        marker-end="url(#green)"/>
-
-
-  <path d="M630,488 H560 V360 H446"
-        fill="none"
-        stroke="#ea580c"
-        stroke-width="2.6"
-        marker-end="url(#orange)"/>
-
-  <path d="M630,595 H585 V513 H446"
-        fill="none"
-        stroke="#ea580c"
-        stroke-width="2.6"
-        marker-end="url(#orange)"/>
-
-  <path d="M630,685 H575 V643 H446"
-        fill="none"
-        stroke="#ea580c"
-        stroke-width="2.6"
-        marker-end="url(#orange)"/>
-
-
-  <!-- Dead lettering -->
-  <path d="M890,526 V828 H780"
-        fill="none"
-        stroke="#dc2626"
-        stroke-width="2.6"
-        marker-end="url(#red)"/>
-
-  <path d="M780,828 H960"
-        fill="none"
-        stroke="#dc2626"
-        stroke-width="2.6"
-        marker-end="url(#red)"/>
-
-
-  <!-- PostgreSQL writes -->
-  <path d="M64,343 H8 V960 H1180 V603 H1190"
-        fill="none"
-        stroke="#475569"
-        stroke-width="2.8"
-        marker-end="url(#slate)"/>
-
-  <path d="M64,643 H24 V880 H1170 V733 H1190"
-        fill="none"
-        stroke="#475569"
-        stroke-width="2.8"
-        marker-end="url(#slate)"/>
-
-
-  <!-- ========================================================= -->
-  <!-- FLOW LABELS                                               -->
-  <!-- ========================================================= -->
-
-  <text x="523" y="232"
-        text-anchor="middle"
-        font-size="11.5"
-        fill="#2563eb">
-    publish
-  </text>
-
-  <text x="1040" y="240"
-        font-size="11"
-        fill="#16a34a">
-    orders.#
-  </text>
-
-  <text x="1040" y="470"
-        font-size="11"
-        fill="#16a34a">
-    broadcast
-  </text>
-
-  <text x="505" y="545"
-        text-anchor="middle"
-        font-size="11"
-        fill="#ea580c">
-    competing consumers
-  </text>
-
-  <text x="516" y="505"
-        text-anchor="middle"
-        font-size="11"
-        fill="#ea580c">
-    consume
-  </text>
-
-  <text x="510" y="635"
-        text-anchor="middle"
-        font-size="11"
-        fill="#ea580c">
-    consume
-  </text>
-
-  <text x="900" y="660"
-        font-size="11"
-        fill="#dc2626">
-    reject → DLX
-  </text>
-
-  <text x="870" y="858"
-        text-anchor="middle"
-        font-size="10.5"
-        fill="#dc2626">
-    orders.dead
-  </text>
-
-  <text x="150" y="872"
-        font-size="11"
-        fill="#475569">
-    INSERT fanout_events
-  </text>
-
-  <text x="150" y="952"
-        font-size="11"
-        fill="#475569">
-    INSERT processed_orders
-  </text>
-
-
-  <!-- ========================================================= -->
-  <!-- LEGEND                                                    -->
-  <!-- ========================================================= -->
-
-  <text x="90" y="712"
-        font-size="13"
-        font-weight="700"
-        fill="#475569">
-    Legend
-  </text>
-
-  <path d="M90,740 H126"
-        fill="none"
-        stroke="#2563eb"
-        stroke-width="2.6"
-        marker-end="url(#blue)"/>
-
-  <text x="136" y="744"
-        font-size="12"
-        fill="#334155">
-    publish (AMQP)
-  </text>
-
-
-  <path d="M90,764 H126"
-        fill="none"
-        stroke="#16a34a"
-        stroke-width="2.6"
-        marker-end="url(#green)"/>
-
-  <text x="136" y="768"
-        font-size="12"
-        fill="#334155">
-    routing / binding
-  </text>
-
-
-  <path d="M90,788 H126"
-        fill="none"
-        stroke="#ea580c"
-        stroke-width="2.6"
-        marker-end="url(#orange)"/>
-
-  <text x="136" y="792"
-        font-size="12"
-        fill="#334155">
-    consume
-  </text>
-
-
-  <path d="M90,812 H126"
-        fill="none"
-        stroke="#dc2626"
-        stroke-width="2.6"
-        marker-end="url(#red)"/>
-
-  <text x="136" y="816"
-        font-size="12"
-        fill="#334155">
-    dead-letter (nack)
-  </text>
-
-
-  <path d="M90,836 H126"
-        fill="none"
-        stroke="#475569"
-        stroke-width="2.4"
-        marker-end="url(#slate)"/>
-
-  <text x="136" y="840"
-        font-size="12"
-        fill="#334155">
-    write to PostgreSQL
-  </text>
-
-
-  <!-- ========================================================= -->
-  <!-- WARNING                                                   -->
-  <!-- ========================================================= -->
-
-  <rect x="40" y="1000"
-        width="1520" height="66"
-        rx="12"
-        fill="#fff7ed"
-        stroke="#f59e0b"
-        stroke-width="1.6"/>
-
-  <text x="800" y="1030"
-        text-anchor="middle"
-        font-size="18"
-        font-weight="700"
-        fill="#b45309">
-    Educational playground — not production ready
-  </text>
-
-  <text x="800" y="1052"
-        text-anchor="middle"
-        font-size="13.5"
-        fill="#92400e">
-    Single-node RabbitMQ on kind: exchanges, bindings, competing consumers,
-    manual acknowledgements and dead-lettering
-  </text>
-
-</svg>
-=======
   <use xlink:href="#rabbitmq-logo"
        x="644"
        y="216"
@@ -1602,4 +970,3 @@
   </text>
 
 </svg>
->>>>>>> 95ca590 (Added svg/png)
